@@ -18,7 +18,7 @@ A command line tool that can describe one or more images.
 
 ## Example use
 
-![puppy](img/puppy.png)
+<img align="right" width="150" height="150" alt="Puppy" src="img/puppy.png">
 
 ```sh
 describeimage img/puppy.png
