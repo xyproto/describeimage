@@ -19,7 +19,7 @@ A command line tool that can describe one or more images.
 ## Example use
 
 ```sh
-describeimage img/puppy.png
+describeimage puppy.png
 ```
 
 <img align="right" width="150" height="150" alt="Puppy" src="img/puppy.png">
