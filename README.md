@@ -18,11 +18,11 @@ A command line tool that can describe one or more images.
 
 ## Example use
 
-<img align="right" width="150" height="150" alt="Puppy" src="img/puppy.png">
-
 ```sh
 describeimage img/puppy.png
 ```
+
+<img align="right" width="150" height="150" alt="Puppy" src="img/puppy.png">
 
 > The image shows a cute puppy sitting on a city sidewalk, looking up at the camera with its tongue out. It's a staged photo that captures the dog in an urban setting, likely intended to evoke feelings of joy and warmth associated with pets in city environments. The project containing this file might be related to pet photography, advertising for pet-friendly services or products, or even a stock image collection focused on animals in urban settings.
 
