@@ -1,0 +1,7 @@
+describeimage
+.DS_Store
+*.bak
+*.tmp
+*.swp
+*.o
+include.txt
