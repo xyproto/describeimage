@@ -1,4 +1,4 @@
-# DescribeImage
+# Describe Image
 
 A command line tool that can describe one or more images.
 
