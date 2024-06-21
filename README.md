@@ -1,6 +1,6 @@
 # Describe Image
 
-A command line tool that can describe one or more images.
+A command line tool for describing the contents of one or more images.
 
 ## Requirements
 
