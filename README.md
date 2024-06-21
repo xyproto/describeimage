@@ -16,6 +16,8 @@ A command line tool for describing the contents of one or more images.
 
     go install github.com/xyproto/describeimage@latest
 
+The executable ends up in `~/go/bin` unless Go has been configured to place it somewhere else.
+
 ## Example use
 
 ```sh
