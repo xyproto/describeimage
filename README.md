@@ -27,7 +27,7 @@ describeimage puppy.png
 > The image shows a cute puppy sitting on the sidewalk in what appears to be an urban setting. The puppy is looking directly at the camera with its tongue out, giving a playful and happy expression. It has a fluffy coat of light brown fur. In the background, there's a cityscape with tall buildings, street lamps, and a clear sky. The lighting suggests it might be late afternoon or early evening, as indicated by the warm glow on the buildings. There are no visible texts in the image.
 
 ```sh
-describeimage img/meloncat.jpg
+describeimage meloncat.jpg
 ```
 
 <img align="right" width="150" height="150" alt="Melon Cat" src="img/meloncat.jpg">
