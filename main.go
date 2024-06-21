@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	versionString    = "DescribeImage 1.1.0"
+	versionString    = "DescribeImage 1.2.0"
 	defaultModel     = "llava"
 	defaultTermWidth = 79
 )
