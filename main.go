@@ -14,15 +14,6 @@ const (
 	defaultTermWidth = 79
 )
 
-var verbose bool
-
-// Only print the provided data when in verbose mode
-func logVerbose(format string, a ...interface{}) {
-	if verbose {
-		fmt.Printf(format, a...)
-	}
-}
-
 func getTerminalWidth() int {
 	width, _, err := term.GetSize(int(os.Stdout.Fd()))
 	if err != nil {
@@ -36,6 +27,7 @@ func main() {
 		promptHeader, outputFile, model string
 		wrapWidth                       int
 		showVersion                     bool
+		verbose                         bool
 	)
 
 	pflag.BoolVarP(&verbose, "verbose", "V", false, "verbose output")
@@ -54,7 +46,7 @@ func main() {
 
 	filenames := pflag.Args()
 
-	output, err := describeImages(promptHeader, outputFile, model, wrapWidth, filenames)
+	output, err := describeImages(promptHeader, outputFile, model, wrapWidth, filenames, verbose)
 	if err != nil {
 		fmt.Println("Error:", err)
 		os.Exit(1)

@@ -9,13 +9,14 @@ const (
 	promptHeader = ""
 	outputFile   = ""
 	wrapWidth    = 0
+	verbose      = true
 )
 
 func TestImageDescriptionContainsPuppy(t *testing.T) {
 	// Define the input parameters
 	filenames := []string{"img/puppy.png"}
 	// Call the describeImages function
-	output, err := describeImages(promptHeader, outputFile, defaultModel, wrapWidth, filenames)
+	output, err := describeImages(promptHeader, outputFile, defaultModel, wrapWidth, filenames, verbose)
 	if err != nil {
 		t.Fatalf("describeImages failed: %v", err)
 	}
@@ -29,7 +30,7 @@ func TestImageDescriptionContainsCat(t *testing.T) {
 	// Define the input parameters
 	filenames := []string{"img/meloncat.jpg"}
 	// Call the describeImages function
-	output, err := describeImages(promptHeader, outputFile, defaultModel, wrapWidth, filenames)
+	output, err := describeImages(promptHeader, outputFile, defaultModel, wrapWidth, filenames, verbose)
 	if err != nil {
 		t.Fatalf("describeImages failed: %v", err)
 	}
