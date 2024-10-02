@@ -6,7 +6,8 @@ A command line tool for describing the contents of one or more images.
 
 ### Run-time requirements
 
-* Ollama (the service must be up and running, and there must be enough memory and CPU and/or GPU available to be able to use the [`llava`](https://ollama.com/library/llava) model).
+* Ollama (the service must be up and running, and there must be enough memory and CPU and/or GPU available to be able to use the user-configured LLM model for vision tasks (for example the [`llava`](https://ollama.com/library/llava) model).
+* [`llm-manager`](https://github.com/xyproto/llm-manager) can be used for configuring which model to use for the `vision` task.
 
 ### Build-time requirements
 
@@ -38,6 +39,6 @@ describeimage meloncat.jpg
 
 ## General info
 
-* Version: 1.2.0
+* Version: 1.3.0
 * License: BSD-3
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;

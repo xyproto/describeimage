@@ -6,24 +6,17 @@ import (
 	"strings"
 
 	"github.com/xyproto/ollamaclient/v2"
+	"github.com/xyproto/usermodel"
 	"github.com/xyproto/wordwrap"
 )
 
-// Only print the provided data when verbose is true
-func logVerbose(verbose bool, format string, a ...interface{}) {
-	if verbose {
-		fmt.Printf(format, a...)
-	}
-}
-
 // describeImages uses Ollama and the given model to describe one or more images.
 // prompt is the start of the multimodal prompt: the instructions which will be followed by one or more images
-// outputFile is the file to write the result to (can be blank to not write to anything)
-// model is the model to use, like llava
+// outputFile is an (optional) filename to write the resulting description to
 // writeWidth is the width that the returned or written string should be wrapped to, if it is >0
 // filenames is a list of input images
 // A description is returned as a string.
-func describeImages(prompt, outputFile, model string, wrapWidth int, filenames []string, verbose bool) (string, error) {
+func describeImages(prompt, model, outputFile string, wrapWidth int, filenames []string, verbose bool) (string, error) {
 	if wrapWidth == -1 {
 		wrapWidth = getTerminalWidth()
 	}
@@ -44,21 +37,23 @@ func describeImages(prompt, outputFile, model string, wrapWidth int, filenames [
 		}
 	}
 
+	oc := ollamaclient.New()
+
+	if model == "" {
+		model = usermodel.GetVisionModel() // get the llm-manager defined model for the "vision" task
+	}
+
+	// Get and use the user-configured LLM/Ollama model for vision-related tasks, perhaps "llava"
+	oc.ModelName = model
+
+	oc.Verbose = verbose
+
 	if len(images) == 0 {
 		return "", fmt.Errorf("no images to describe")
 	}
-
 	if prompt == "" {
-		if len(images) > 1 {
-			prompt = "Describe the following images:"
-		} else {
-			prompt = "Describe this image:"
-		}
+		prompt = "Describe the following image(s):"
 	}
-
-	oc := ollamaclient.New()
-	oc.ModelName = model
-	oc.Verbose = verbose
 
 	if err := oc.PullIfNeeded(verbose); err != nil {
 		return "", fmt.Errorf("error: %v", err)
