@@ -8,6 +8,19 @@ import (
 	"net/http"
 )
 
+// Message is a chat message
+type Message struct {
+	Role    string `json:"role"`
+	Content string `json:"content"`
+}
+
+// MessageResponse represents the response data from the generate API call
+type MessageResponse struct {
+	Role      string     `json:"role"`
+	Content   string     `json:"content"`
+	ToolCalls []ToolCall `json:"tool_calls"`
+}
+
 // StreamOutput sends a request to the Ollama API and returns the generated output via a callback function.
 // The callback function is given a string and "true" when the streaming is done (or if an error occurred).
 func (oc *Config) StreamOutput(callbackFunction func(string, bool), promptAndOptionalImages ...string) error {
@@ -31,6 +44,7 @@ func (oc *Config) StreamOutput(callbackFunction func(string, bool), promptAndOpt
 	if len(images) > 0 {
 		reqBody = GenerateRequest{
 			Model:  oc.ModelName,
+			System: oc.SystemPrompt,
 			Prompt: prompt,
 			Images: images,
 			Stream: true,
@@ -42,6 +56,7 @@ func (oc *Config) StreamOutput(callbackFunction func(string, bool), promptAndOpt
 	} else {
 		reqBody = GenerateRequest{
 			Model:  oc.ModelName,
+			System: oc.SystemPrompt,
 			Prompt: prompt,
 			Stream: true,
 			Options: RequestOptions{
@@ -63,7 +78,7 @@ func (oc *Config) StreamOutput(callbackFunction func(string, bool), promptAndOpt
 	HTTPClient := &http.Client{
 		Timeout: oc.HTTPTimeout,
 	}
-	resp, err := HTTPClient.Post(oc.ServerAddr+"/api/generate", "application/json", bytes.NewBuffer(reqBytes))
+	resp, err := HTTPClient.Post(oc.ServerAddr+"/api/generate", mimeJSON, bytes.NewBuffer(reqBytes))
 	if err != nil {
 		return err
 	}
