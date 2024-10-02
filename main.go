@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/pflag"
 )
 
-const versionString = "DescribeImage 1.3.1"
+const versionString = "DescribeImage 1.3.2"
 
 func main() {
 	var (
