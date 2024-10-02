@@ -37,27 +37,26 @@ func describeImages(prompt, model, outputFile string, wrapWidth int, filenames [
 		}
 	}
 
-	oc := ollamaclient.New()
-
-	if model == "" {
-		model = usermodel.GetVisionModel() // get the llm-manager defined model for the "vision" task
-	}
-
-	// Get and use the user-configured LLM/Ollama model for vision-related tasks, perhaps "llava"
-	oc.ModelName = model
-
-	oc.Verbose = verbose
-
 	if len(images) == 0 {
 		return "", fmt.Errorf("no images to describe")
 	}
 	if prompt == "" {
 		prompt = "Describe the following image(s):"
 	}
-
-	if err := oc.PullIfNeeded(verbose); err != nil {
-		return "", fmt.Errorf("error: %v", err)
+	if model == "" {
+		model = usermodel.GetVisionModel() // get the llm-manager defined model for the "vision" task, perhaps "llava"
 	}
+
+	oc := ollamaclient.New()
+	oc.ModelName = model
+	oc.Verbose = verbose
+
+	if err := oc.PullIfNeeded(true); err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to pull model: %v\n", err)
+		fmt.Fprintln(os.Stderr, "Ollama must be up and running")
+		os.Exit(1)
+	}
+
 	oc.SetReproducible()
 
 	promptAndImages := append([]string{prompt}, images...)
