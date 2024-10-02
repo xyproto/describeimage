@@ -1,6 +1,8 @@
-# Describe Image
+# DescribeImage
 
-A command line tool for describing the contents of one or more images.
+Use LLMs that are running locally (or on a server defined in `OLLAMA_HOST`) to describe the given images.
+
+This repository contains a command line utility that can be used to describe images with Ollama.
 
 ## Requirements
 
