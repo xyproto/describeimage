@@ -39,6 +39,8 @@ describeimage meloncat.jpg
 
 > The image shows a cat with a humorous and unusual appearance. The cat's head is covered by a large, green watermelon slice that has been cut to fit snugly over its head. The cat's eyes are visible through the watermelon, and it appears to be looking directly at the camera with a somewhat disgruntled or unimpressed expression. The background is simple and does not distract from the cat and its watermelon headpiece.
 
+(note that it's really a lime)
+
 ## General info
 
 * Version: 1.3.2
