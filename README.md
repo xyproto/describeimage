@@ -21,6 +21,10 @@ This repository contains a command line utility that can be used to describe ima
 
 The executable ends up in `~/go/bin` unless Go has been configured to place it somewhere else.
 
+## Models
+
+Note that `llama3.2-vision:latest` (7.9 GB) gives better results than the default model, `llava-llama3:8b` (5.5 GB).
+
 ## Example use
 
 ```sh
