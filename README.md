@@ -9,7 +9,7 @@ This repository contains a command line utility that can be used to describe ima
 ### Run-time requirements
 
 * Ollama (the service must be up and running, and there must be enough memory and CPU and/or GPU available to be able to use the user-configured LLM model for vision tasks (for example the [`llava`](https://ollama.com/library/llava) model).
-* [`llm-manager`](https://github.com/xyproto/llm-manager) can be used to configure which model to use for the `vision` task.
+* [`llm-manager`](https://github.com/xyproto/llm-manager) can be used to configure which model to use for the `vision` task (the `-m` flag can also be used).
 
 ### Build-time requirements
 
