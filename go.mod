@@ -1,15 +1,13 @@
 module github.com/xyproto/describeimage
 
-go 1.23.1
-
-toolchain go1.23.2
+go 1.24.0
 
 require (
-	github.com/spf13/pflag v1.0.6
-	github.com/xyproto/ollamaclient/v2 v2.7.1
-	github.com/xyproto/usermodel v1.2.2
+	github.com/spf13/pflag v1.0.10
+	github.com/xyproto/ollamaclient/v2 v2.7.2
+	github.com/xyproto/usermodel v1.2.3
 	github.com/xyproto/wordwrap v1.0.1
-	golang.org/x/term v0.30.0
+	golang.org/x/term v0.38.0
 )
 
 require (
@@ -17,6 +15,6 @@ require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/xyproto/binary v1.3.3 // indirect
 	github.com/xyproto/env/v2 v2.5.3 // indirect
-	github.com/xyproto/files v1.9.0 // indirect
-	golang.org/x/sys v0.31.0 // indirect
+	github.com/xyproto/files v1.10.1 // indirect
+	golang.org/x/sys v0.39.0 // indirect
 )
