@@ -33,7 +33,7 @@ func describeImages(prompt, model, outputFile string, wrapWidth int, filenames [
 			images = append(images, base64image)
 			logVerbose(verbose, "OK\n")
 		} else {
-			logVerbose(verbose, "FAILED: "+err.Error()+"\n")
+			logVerbose(verbose, "FAILED: %s\n", err.Error())
 		}
 	}
 
