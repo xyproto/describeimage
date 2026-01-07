@@ -39,6 +39,6 @@ describeimage meloncat.jpg
 
 ## General info
 
-* Version: 1.3.2
+* Version: 1.3.3
 * License: BSD-3
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
