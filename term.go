@@ -1,18 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"golang.org/x/term"
 )
-
-// Only print the provided data when verbose is true
-func logVerbose(verbose bool, format string, a ...any) {
-	if verbose {
-		fmt.Printf(format, a...)
-	}
-}
 
 // getTerminalWidth tries to find the current width of the terminal, with a fallback to 79
 func getTerminalWidth() int {
