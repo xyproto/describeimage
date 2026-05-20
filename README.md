@@ -23,7 +23,15 @@ The executable ends up in `~/go/bin` unless Go has been configured to place it s
 
 ## Models
 
-Note that `llama3.2-vision:latest` (7.9 GB) gives better results than the default model, `llava-llama3:8b` (5.5 GB).
+The default vision model is `qwen2.5vl:3b` (~3.5 GB).
+
+For machines with >4G VRAM, these might also give good results:
+
+* `gemma3:4b` (~3.3 GB)
+* `llava-llama3:8b` (~5.5 GB)
+* `llama3.2-vision:latest` (~7.9 GB)
+
+Set the `vision` model in `~/.config/llm-manager/llm.conf` or `/etc/llm.conf`, or pass it with the `-m` flag.
 
 ## Example use
 
