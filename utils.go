@@ -8,7 +8,7 @@ import (
 )
 
 // Only print the provided data when verbose is true
-func logVerbose(verbose bool, format string, a ...interface{}) {
+func logVerbose(verbose bool, format string, a ...any) {
 	if verbose {
 		fmt.Printf(format, a...)
 	}
