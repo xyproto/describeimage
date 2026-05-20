@@ -64,12 +64,12 @@ func describeImages(prompt, model, outputFile string, wrapWidth int, filenames [
 	logVerbose(verbose, "[%s] Analyzing...\n", oc.ModelName)
 	output, err := oc.GetOutput(promptAndImages...)
 	if err != nil {
-		return "", fmt.Errorf("error: %v", err)
+		return "", fmt.Errorf("[%s] %v", oc.ModelName, err)
 	}
 	logVerbose(verbose, "[%s] Analysis complete.\n", oc.ModelName)
 
 	if output == "" {
-		return "", fmt.Errorf("generated output for the prompt %s is empty", prompt)
+		return "", fmt.Errorf("[%s] generated output for the prompt %q is empty", oc.ModelName, prompt)
 	}
 
 	if wrapWidth > 0 {
