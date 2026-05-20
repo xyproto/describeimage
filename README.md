@@ -47,6 +47,10 @@ describeimage meloncat.jpg
 
 ---
 
+```sh
+describeimage horses.png
+```
+
 <img align="right" width="400" height="267" alt="Horses" src="img/horses.png">
 
 > The image depicts a serene pastoral scene with a group of horses grazing in a lush green field. In the background, majestic mountains rise against a clear blue sky, partially covered by a few scattered clouds. The landscape is framed by a line of trees, adding depth and contrast to the scene. The overall atmosphere is peaceful and idyllic, capturing the beauty of nature and the tranquility of rural life.
