@@ -39,7 +39,7 @@ Set the `vision` model in `~/.config/llm-manager/llm.conf` or `/etc/llm.conf`, o
 describeimage meloncat.jpg
 ```
 
-<img align="right" width="150" height="150" alt="Melon Cat" src="img/meloncat.jpg">
+<img align="left" width="170" height="170" alt="Melon Cat" src="img/meloncat.jpg">
 
 > The image shows a cat with a humorous and unusual appearance. The cat's head is covered by a large, green watermelon slice that has been cut to fit snugly over its head. The cat's eyes are visible through the watermelon, and it appears to be looking directly at the camera with a somewhat disgruntled or unimpressed expression. The background is simple and does not distract from the cat and its watermelon headpiece.
 
@@ -50,6 +50,8 @@ describeimage meloncat.jpg
 <img align="right" width="400" height="267" alt="Horses" src="img/horses.png">
 
 > The image depicts a serene pastoral scene with a group of horses grazing in a lush green field. In the background, majestic mountains rise against a clear blue sky, partially covered by a few scattered clouds. The landscape is framed by a line of trees, adding depth and contrast to the scene. The overall atmosphere is peaceful and idyllic, capturing the beauty of nature and the tranquility of rural life.
+
+---
 
 ## General info
 
