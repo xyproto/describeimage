@@ -59,6 +59,6 @@ describeimage horses.png
 
 ## General info
 
-* Version: 1.4.0
+* Version: 1.5.0
 * License: BSD-3
 * Author: Alexander F. Rødseth &lt;xyproto@archlinux.org&gt;
