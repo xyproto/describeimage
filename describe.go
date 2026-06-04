@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/xyproto/env/v2"
 	"github.com/xyproto/ollamaclient/v2"
 	"github.com/xyproto/usermodel"
 	"github.com/xyproto/wordwrap"
@@ -44,7 +45,8 @@ func describeImages(prompt, model, outputFile string, wrapWidth int, filenames [
 		prompt = "Describe the following image(s):"
 	}
 	if model == "" {
-		model = usermodel.GetVisionModel() // get the llm-manager defined model for the "vision" task, perhaps "llava"
+		// Respect OLLAMA_MODEL if set, otherwise get the llm-manager defined model for the "vision" task, perhaps "llava"
+		model = env.Str("OLLAMA_MODEL", usermodel.GetVisionModel())
 	}
 
 	oc := ollamaclient.New()
